@@ -1,0 +1,44 @@
+<div class="viewWidth" *ngIf="Tickets.length;else notfound">
+<div class="row ">
+    <div class="col-md-8 offset-md-2 ">
+        <div class="card mt-2 mb-2 p-3 cardStyle" *ngFor="let ticket of Tickets" >
+            <div class="card-header text-center text-danger">
+                <b class="styling1">YATHRI</b>
+            </div>
+           
+            
+            <span class="text-center ">Booking Id:&nbsp;<b style="color:#00bdaa">{{ticket.bookingID}}</b></span>
+            <span class="text-center">From <b><span class=" text-center styling">{{ticket.source}}</span></b> To <b><span class=" styling">{{ticket.dest}}</span></b></span><br>
+            <div class="row">
+                <div class="col-md-5 offset-md-1">
+                    <span>Name:&nbsp;<b>{{ticket.userName}}</b></span><br>
+                    <span>Bus Name:&nbsp;<b>{{ticket.busName}}</b></span><br>
+                    <span>Date of Journey:&nbsp;<b>{{ticket.Departure|date:'medium'}}</b></span>
+
+                </div>
+                <div class="col-md-4 offset-md-2">
+                    <span>No:of Passengers:&nbsp;<b>{{ticket.numberOfSeats}}</b></span><br>
+                    <span>Seat Numbers:&nbsp;<b>{{ticket.seatNumber}}</b></span><br>
+                    <span>Total Fare:&nbsp;<b>{{ticket.totalFare|currency:'INR'}}</b></span>
+                </div>      
+                
+                </div>
+                <div class="card-action" *ngIf="cancel">
+                    <button *ngIf="ticket.cancel"  (click)="cancelTicket(ticket.bookingID)" class="btn  float-right btn-danger  mr-2  mb-3">Cancel</button>
+                </div>
+           
+             
+            
+                </div>
+                
+        
+    </div>
+
+</div>
+</div>
+
+<ng-template #notfound >
+    <div class="text-center  viewWidth" style="color: maroon;font-size: 40px;padding-top: 10%;">
+      Sorry! you  don't have  any {{category}} 
+      </div>
+  </ng-template>

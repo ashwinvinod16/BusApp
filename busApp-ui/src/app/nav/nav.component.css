@@ -1,0 +1,14 @@
+.nav-content-styling{
+    color:white;
+    font-size: medium;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.navbg{
+    background: #16222A;
+    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+    background: linear-gradient(59deg, #3A6073, #16222A);
+}
+.dropdown{
+    cursor: pointer;
+}

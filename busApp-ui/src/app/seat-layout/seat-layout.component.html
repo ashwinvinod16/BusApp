@@ -1,0 +1,88 @@
+<div class="container">
+<div class="row">
+
+<div class="plane col-md-6">
+
+    
+    <ol class="cabin fuselage">
+     <img class="steeringWheel mb-3" src="./../../assets/car-steering-wheel.png">
+      <li *ngFor="let seats of rows" class="row row--1">
+        <ol class="seats" type="A">
+          <li *ngFor="let seat of seats" class="seat">
+            <input (click)="seatAction(seat)" type="checkbox"  [disabled]="seatsLayout?.booked?.includes(seat)" [id]="seat" />
+            <label [for]="seat">{{seat}}</label>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <span><div class="box-coloring mt-3" style="background-color: red;"></div>&nbsp; Available seats</span><br>
+    <span><div class="box-coloring mt-3" style="background-color: grey;"></div>&nbsp;Blocked Seat</span><br>
+    <span><div class="box-coloring mt-3" style="background-color: green;"></div>&nbsp;Selected Seat</span>
+
+  </div>
+  
+    <div class="col-md-6 ">
+        <div class="seat_plan">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th>Seats</th>
+                <th>Fare</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let s of showSeatList">
+                <td>{{s}}</td>
+                <td>{{data.selectedBus.farePerPerson}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <div class="total  bg-default">
+            <b>Total:{{total}} </b>
+          </div>
+          <div class="row ">
+            <button (click)='bookTicket()' [disabled]="showSeatList.length>=10" class="btn mt-3 ml-3 btn-primary btn-sm btn-block ">Confirm</button>
+          </div>
+        </div>
+ 
+
+
+        <!-- (click)="confirmJourney()" -->
+ </div>
+ <!-- <div *ngIf="alert"class="alert alert-danger ">You can buy only 10 seats in one time </div> -->
+
+ <!-- Button trigger modal -->
+<!-- <button *ngIf="alert" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div *ngIf="alert" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="modal-body">
+        <h4>You can book only 10 seats at a time</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="alert"class="alert alert-danger ">You can buy only 10 seats in one time </div> -->
+
+
+
+</div>
+  
+  

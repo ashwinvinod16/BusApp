@@ -1,0 +1,80 @@
+<div class="row"  *ngIf="successmsg" style="padding-top: 30px;">
+  <div class="col-md-8 offset-md-2">
+    <p class="alert alert-success text-center">
+        <strong><h3>{{successmsg}}</h3></strong>
+    </p>
+  </div>
+</div>
+
+<div class="container mt-4 divsize" *ngIf="busDetails.length;else notfound">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+          <div class="row text-center">
+              <h2 class=" text-capitalize text-bold col-md-12 mb-3 text-center">{{source}} - {{dest}} on {{date | date:'longDate'}}</h2>
+            </div>
+        <div class="row mb-3 card card-body">
+  
+         <div class=" row">
+           <div class="col-md-4 text-right">
+             <p><b>Filter By</b></p>
+           </div>
+            <div class="form-group col-md-4">
+              <select name="" class="form-control form-control-sm" id="">
+                <option value="">By Bus</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+                <select name="" class="form-control form-control-sm">
+                  <option value="">By Type</option>
+                </select>
+              </div>
+         </div>
+        </div>
+        <div class="row search-result mb-5 pb-5">
+  
+          <table class="table">
+  
+            <thead>
+              <tr>
+                  <th>Bus Name</th>
+                  <th>Dept. Time</th>
+                  <th>Coach Type</th>
+                  <th>Seats Available</th>
+                  <th>Fare</th>
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let b of busDetails">
+                <td> {{b.busName}}</td>
+               
+                <td>{{b.Departuretime}}</td>
+                <td>{{b.typeOfBus}}</td>
+                <!-- <div *ngFor="let seat of b.Availability"><td  *ngIf="seat.date==date;else goTo">{{seat.seats-b.regularPassenger.length}}</td>
+                <ng-template #goTo><td>{{36-b.regularPassenger.length}}</td></ng-template></div> -->
+                <td>{{b.seat}}</td>
+                <td>{{b.farePerPerson}}</td>
+                
+                
+                
+                
+                
+               
+
+               
+                <td><button (click)="openBusLayout(b)"  class="btn btn-danger btn-sm">View Seats</button></td>
+                
+               </tr> 
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <ng-template #notfound >
+    <div class="text-center  divsize" style="color: maroon;font-size: 40px;padding-top: 10%;">
+      Sorry! we are not operating in this route
+      </div>
+  </ng-template>

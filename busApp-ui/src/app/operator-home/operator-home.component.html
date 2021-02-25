@@ -1,0 +1,51 @@
+<div class="container mt-4 divsize" *ngIf="busDetails.length;else notfound">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+          <div class="row text-center">
+              <h2 class=" text-capitalize text-bold col-md-12 mb-3 text-center">{{todayDate | date:'longDate'}}</h2>
+            </div>
+       
+        <div class="row search-result mb-5 pb-5">
+  
+          <table class="table">
+  
+            <thead>
+              <tr>
+                  <th>Bus Name</th>
+                  <th>Dept. Time</th>
+                  <th>Coach Type</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Seats Available</th>
+                  <th>Fare</th> 
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let b of busDetails">
+                <td> {{b.busName}}</td>
+               
+                <td>{{b.Departuretime}}</td>
+                <td>{{b.typeOfBus}}</td>
+                <td>{{b.startingPoint}}</td>
+                <td>{{b.endPoint}}</td>
+                <div *ngFor="let seat of b.Availability"><td  *ngIf="seat.date==todayDate">{{seat.seats}}</td></div>
+                <td>{{b.farePerPerson}}</td>
+                
+    
+                
+                
+               </tr> 
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <ng-template #notfound >
+    <div class="text-center  divsize" style="color: maroon;font-size: 40px;padding-top: 10%;">
+        Click on Add bus, to register a bus
+      </div>
+  </ng-template>

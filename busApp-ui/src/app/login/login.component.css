@@ -1,0 +1,33 @@
+.registerSubmit{
+    background-color: #58b4ae;
+    color:white;
+    font-weight: bold;
+}
+
+/* .newstyle{
+    border: 1px solid;
+    border-radius: 10px;
+    width:25rem;
+    height:25rem
+} */
+
+.registerStyle{
+    border: 1px solid;
+    border-radius: 10px;
+    margin-top: 25%;
+    width: auto;
+    height: auto;
+    padding: 5%;
+    /* background-color: #eee; */
+    background: rgba(219, 224, 230, 0.3)
+    
+}
+
+.imagedesign{
+    background-image: url("../../assets/bus11.jpg");
+    height: 80%;
+    width: 100%;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

@@ -1,0 +1,54 @@
+<div class="imagedesign">
+<div class="row">
+ <div class="col-md-4 offset-md-4"> 
+    <div class="  registerStyle"> 
+        <form [formGroup]="loginForm" (ngSubmit)="send()" class="newstyle ">
+            <h3 class="formstyle" style="margin:10px 10px ;text-align: center;font-size: 30px;"><strong>Login</strong></h3>
+ 
+            <div class="form-group formstyle">
+             <label for="email" style="font-size: medium;"><strong>User Name</strong></label>
+             <input  [class.is-invalid]="email.invalid && email.touched" type="email" id="email" formControlName="userName" class="form-control" placeholder="Email ID/Contact Number/UserID">
+             
+             <div *ngIf="email.invalid && email.touched">
+                 <small *ngIf="email.errors?.required" class="text-danger alert alert-danger form-control">Field required</small>
+                </div> 
+             <!-- <small class="text-danger">{{ errormessage }}</small>   -->
+          </div>
+ 
+          <div class="form-group formstyle">
+             <label for="pwd" style="font-size: medium;"><strong>Password</strong></label>
+             <input [class.is-invalid]="password.invalid && password.touched"  type="password" id="pwd" formControlName="Password" class="form-control" placeholder="At least 6 characters">
+             
+             <div *ngIf="password.invalid && password.touched">
+                 <small *ngIf="password.errors?.required" class="text-danger alert alert-danger form-control" >Password is required</small>
+   
+             </div> 
+           
+         </div>
+         <div class="form-group formstyle">
+            <label for="pwd" class="formcontent"><strong>Select Category</strong></label>
+            <select name="Category" class="form-control" id="types"   formControlName="type">
+                <option value=""  selected disabled>---Choose your category---</option>
+                <option value="Passenger">Passenger</option>
+                <option value="Operator">Bus Operator</option>
+              </select>       
+              
+              <small *ngIf="type.errors?.required && type.touched" class="text-danger alert alert-danger form-control">Category is required</small>
+    
+        </div>
+         
+     
+         <div class="form-group formstyle ">
+             <button type="submit" [disabled]="!loginForm.valid" class="form-control btn btn-warning  " value="Login">Login</button>
+             <small *ngIf="errormessage" class="text-danger alert alert-danger form-control">{{ errormessage }}</small>
+         </div>
+         <div class="formstyle">
+             <span>New User? <button class='btn btn-success' [routerLink]='["/register"]'>Sign up</button></span>
+         </div>
+ 
+        </form>
+     </div> 
+  </div>  
+</div>  
+ </div>
+ 

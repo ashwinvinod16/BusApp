@@ -1,0 +1,58 @@
+
+
+.newstyle{
+    border: 1px solid;
+    border-radius: 10px;
+    /* width:25rem; */
+    height:25rem
+}
+
+.newstyle1{
+    border: 1px solid;
+    border-radius: 10px;
+    /* width:25rem; */
+    height:auto;
+    margin-top: 5%;
+    padding:5%;
+    background: rgba(219, 224, 230, 0.3)
+    
+}
+/* @media screen and (max-width: 500px) {
+  .newstyle{width:auto;}
+  .newstyle{height: auto;}
+  .newstyle1{width:auto;}
+  .newstyle1{height: auto;}
+} */
+
+.formstyle{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+
+}
+.registerSubmit{
+    background-color:#3A6073;
+    color:white;
+    font-weight: bold;
+}
+.imagedesign{
+    background-image: url("../../assets/bus12.png");
+    height: 95%;
+    width: 100%;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+}
+
+.formcontent{
+    color:black;
+    font-size: medium;
+}
+
+/* input[type='email']{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color:white
+} */

@@ -1,0 +1,93 @@
+<div class="row"  *ngIf="successmsg" style="padding-top: 30px;">
+    <div class="col-md-8 offset-md-2">
+      <p class="alert alert-success text-center">
+          <strong><h3>{{successmsg}}</h3></strong>
+      </p>
+    </div>
+  </div>
+
+
+
+<div class="row mt-3 mb-3">
+    <div class="col-md-8 offset-md-2">
+    <div class="card" style="border:3px solid #035aa6;border-radius: 25px;">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="color:maroon">Add new Bus</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form [formGroup]="busForm">
+                      <div class="form-group row">
+                        <label for="username" class="col-4 col-form-label"> Bus Name</label> 
+                        <div class="col-8">
+                          <input id="username" name="username" placeholder="Enter Bus Name" class="form-control here" formControlName="busName" required="required" type="text">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="name" class="col-4 col-form-label">Source</label> 
+                        <div class="col-8">
+                          <input id="name" name="name" placeholder="Eg: Banglore" class="form-control here" formControlName="startingPoint"type="text">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="lastname" class="col-4 col-form-label">Destination</label> 
+                        <div class="col-8">
+                          <input id="lastname" name="lastname" placeholder="Eg: Chennai" class="form-control here" formControlName="endPoint" type="text">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="text" class="col-4 col-form-label">Departure Time</label> 
+                        <div class="col-8">
+                          <input id="text" name="text" placeholder="Nick Name" class="form-control here" formControlName="Departuretime" required="required" type="time">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        
+                        <label for="text" class="col-4 col-form-label">Type Of Bus</label> 
+                        <div class="col-8">
+                            <select name="Category" class="form-control" id="types"   formControlName="typeOfBus">
+                                <option value="" disabled>---Choose a category---</option>
+                                <option value="Ac">Ac</option>
+                                <option value="Non-Ac">Non-Ac</option>
+                              </select>                         
+                         </div>
+                        
+                        
+                        
+                        
+                          <!-- <small *ngIf="type.errors?.required && type.touched" class="text-danger alert alert-danger form-control">Category is required</small> -->
+                
+                    </div>
+                      
+                     
+                      <div class="form-group row">
+                        <label for="website" class="col-4 col-form-label">Fare per Seat</label> 
+                        <div class="col-8">
+                          <input id="website" name="website" placeholder="Eg: 1000" class="form-control here" formControlName="farePerPerson" type="number">
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="lastname" class="col-4 col-form-label">Regular Passenger Reservation</label> 
+                        <div class="col-8">
+                          <input id="lastname" name="lastname" placeholder="Eg: A1,A2,D1" class="form-control here" formControlName="regularPassenger" type="text">
+                        </div>
+                      </div>
+                     
+                      <div class="form-group row">
+                        <div class="offset-4 col-8">
+                          <button name="submit" (click)="createBus()" [disabled]="!busForm.valid" class="btn btn-primary">Add Bus</button>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   </div>
+  </div>  

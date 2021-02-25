@@ -1,0 +1,19 @@
+.styling{
+    font-size: 150%;
+    color: #394989;
+}
+.styling1{
+    font-size:20px;
+}
+.viewWidth{
+    min-height: 80%;
+}
+.cardStyle{
+    background-image: url(./../../assets/ticket10.jpeg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    
+    
+    
+}
